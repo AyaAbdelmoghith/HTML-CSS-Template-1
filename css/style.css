@@ -1,0 +1,555 @@
+/*
+1- "COMMONs"
+2- Sections
+	2.0 Header
+	2.1 Home
+	2.2	About
+	2.3	Portfolio
+	2.4	services 
+	2.4.a services
+	2.4.b benefits
+	2.4.c statistics
+	2.5	Prices
+	2.6	Team
+	2.6.a testmonial
+	2.6.b team
+	2.7	Blog
+	2.8	Contact
+	2.9 Footer
+*/
+/* 2- Section Styles*/
+/*2.0 Header*/
+.header{
+	width: 100%;
+	padding: 5px;
+	position: fixed; 
+	z-index: 999;
+	background: rgba(28, 29, 33, 0.8);
+}
+.header .logo{	
+	width: 40%;
+	float: left;
+}
+.header .logo img{	
+	width: 100px;
+	height: 50px ;
+}
+.header .navbar{
+	width: 60%;
+	float: left;	
+	text-align: right; 
+}
+.header .navbar > li{
+	display: inline-block;
+}
+.header .navbar > li > a{
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: white;
+	display: block;
+	padding:18px 15px;
+}
+.header .navbar > li > a:hover{
+	opacity: 0.8;
+}
+.header .navbar > li > a::after, #header .navbar > li > a.active::after{
+	content: "";
+	display: block;
+	height: 3px;
+	background:#6195FF;
+	opacity: 0.8;	
+	transition: width 0.9s;
+}
+.header .navbar > li > a::after{
+	width: 0;
+}
+
+.header .navbar > li > a:hover::after,.header .navbar > li > a.active::after{
+	width: 100%;
+}  
+.dropdown{
+	position: relative;
+}
+.dropdown-menu{
+	position: absolute;
+	top: 100%;
+	left:-120%;
+	color: #FFF;
+	text-align: left;
+	background: #6195FF;
+	width:200px;
+	height:45px;
+}
+.dropdown-menu li a{
+	text-decoration: none;
+	color: #FFF;
+	display: block;	
+	padding: 10px;
+}
+
+/*2.1 Home*/
+#home{
+	background-image: url(../images/background/background1.webp);
+	height: 100vh;
+	background-size: cover;	
+	background-attachment: fixed;
+	position: relative;
+}
+.home-content{
+	position: absolute;
+	color: #FFF;	
+	text-align: center;
+	width:65%;
+	/* Hero Image */
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+.home-content .title{
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 3.3rem;
+	margin-bottom: 10px;
+}
+.home-content .home-desc{
+	margin-bottom: 15px;
+}
+/*2.2 About*/
+.about-content{
+ 	width: 100%;	
+}
+ .about-item{
+	width:31.3%;	
+	float: left;
+	text-align: center;
+	border:1px solid #EEE;
+	padding: 35px 20px;
+}
+
+.about-item .icon{
+	color: #6195FF;
+}
+.about-item-title{
+	text-transform: capitalize;
+	transition: color 0.5s;
+}
+.about-item-desc{
+	margin-bottom: 10px;
+	color:#868F9B;	
+}
+.about-item-link{
+	color: #6195FF;
+}
+/*2.3 Portfolio*/
+#portfolio{
+	background:#FAFAFA;	
+	border: 1px solid #EEE;
+}
+.portfolio-item{
+	width: 31.3%;
+	float: left;
+	position: relative;
+	/*padding: 15px; because there's a border-boxing it will take from the size of the pic The Egn. did it this way I did it differently I add it (in layer class the changes I want because layer is absoulute and has a parent that is relative so the top:0 and left:0 will start from te the 0 of the top and left of the parent so I want it to start even before this point so I started as 0*/
+	margin-bottom: 30px;
+}
+.portfolio-item img{
+ width: 100%;
+}
+.layer{
+	position: absolute;
+	top:-15px;
+	left:-15px;
+	width:110%;
+	height:110%;
+	text-align: center;
+	background: rgba(28, 29, 33, 0.8);
+    transition-delay: 0.2s;
+}
+.portfolio-work{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	width: 90%;
+	text-align: center;
+} 
+.portfolio-work .category{
+	text-transform: uppercase;
+	color: #6195FF;
+	margin-bottom: 5px;
+	display: block;
+	position: relative; /*for the movment from down to top*/
+	top: 10px;
+	transition: top 0.2s;
+	transition-delay: 0.2s;
+	transition-timing-function: ease;
+ }
+.portfolio-work .work-title{
+	color: #FFF;
+	position: relative;
+	top: 10px;
+	transition: top 0.2s;
+	transition-delay: 0.2s;
+	transition-timing-function: ease;
+}
+.portfolio-work .work-link{
+	padding:15px;
+	position: relative;
+	top: 10px;
+	transition: top 0.2s;
+	transition-delay: 0.2s;
+	transition-timing-function: ease;
+}
+.portfolio-work .work-link .icon{
+	color: #FFF;
+	margin-bottom: 10px;
+}
+.portfolio-item:hover .category, .portfolio-item:hover .work-title, .portfolio-item:hover .work-link {
+	top: 0;
+	visibility: visible;
+}
+ 
+/* 2.4 Services*/
+/* 2.4.a Services*/
+.services-item{
+	width: 31.3%;
+	float: left;
+	border:1px solid #EEE;
+	padding: 40px 20px 50px 50px;
+	margin-bottom: 30px;
+	position: relative;
+}
+.services-item-title{
+	text-transform: capitalize;
+	transition: color 0.5s;
+}
+.services-item .icon{
+	font-size: 25px;
+	color: #6195FF;
+	position: absolute;
+	top:40px;
+	left:15px;
+}
+.services-item-desc{
+	color:#868F9B;	
+}
+/* 2.4.b benefits*/
+.benefits{
+	background: #FAFAFA;
+	border-top: 1px solid #EEE;	
+	color: #868F9B;
+}
+.benefits .section-title{
+	text-align: left;
+}
+.benefits-item .line{
+	margin: 7px 0 50px;
+}
+.benefits-content-desc{
+	margin:0 40px 15px 0;
+}
+.benefits-item{
+	float:left;
+	width:50%;
+}
+.benefits-list li{
+	margin-bottom: 5px;
+}
+.benefits-list li i{
+	color: #6195FF;
+	border:1px solid #6195FF;
+	border-radius: 50%;
+	padding: 4px;
+}
+.benefits-item-image img{
+	width: 100%;
+}
+.benefits-bullets{
+	text-align: center; 
+}
+.benefits-bullets li{	
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #EDEDEE;
+	border-radius: 50%;
+	margin: 10px 5px;	
+}
+.benefits-bullets .active, .benefits-bullets li:hover{ 
+	background: #6195FF;
+	width: 20px;
+	border-radius: 5px;
+}
+/* 2.4.c statistics*/
+.statistics{
+	position: relative;	
+	background-size: cover;
+	background-attachment: fixed;
+	background-image:url(../images/background/background2.webp) ;
+	height:280px;
+}
+.statistics-content{
+	padding: 75px 0;
+}
+.statistics-item{
+	padding: 0 10px;
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+.statistics-item .icon{
+	color: #6195FF;
+	margin: 3px;
+	font-size: 40px;
+}
+.statistics-item-title{
+	margin-bottom: 3px;
+}
+.statistics-item-title{
+	font-size: 35px;
+}
+.statistics-item-title, .statistics-item-desc{
+	color:#FFF;
+}
+/* 2.5 Prices*/
+.prices-item{
+	width: 31.3%;
+	float: left;
+	border: 1px solid #EEE;
+	padding: 15px 0;
+	text-align: center;
+}
+.prices-plan{
+	text-transform: uppercase;
+	display: block;
+	margin:30px 0 20px;
+}
+.prices-plan,
+.prices-details p{
+	color:#868F9B;
+	transition: color 0.2s;
+}
+.prices-month{
+	display: block;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-bottom: 20px;
+	line-height: 0;
+}
+.prices-plan-title{
+	border: 3px solid #6195FF;
+	border-radius: 50%;
+	width:140px;
+	height:140px;
+	display:block;
+	font-size: 45px;
+	margin: 20px auto 15px;
+	padding-top: 20px;
+	transition: color 0.2s;
+}
+.prices-details{
+	text-transform: capitalize;
+}
+.prices-details p{
+	margin-bottom: 10px;
+	transition: color 0.2s;
+}
+.prices-item .btn{
+	background: transparent;
+	margin:30px 0;
+	border: 2px solid #6195FF;
+}
+/* 2.6 Team [testimonial-team]*/
+/* 2.6.a testimonial */
+.testimonial{
+	background-image: url(../images/background/background3.webp);
+	background-size: cover;
+	background-attachment: fixed;
+	height: 435px;
+	position: relative;/* For the overlay*/
+}
+.testimonial-content{
+	width: 80%;
+	margin: auto;
+}
+.testimonial-item{
+	width: 50%;
+	float: left;
+	margin: 135px 0;
+}
+.testimonial-item-info{
+	padding:0px 0px 15px 80px;
+	position: relative;
+	
+}
+.testimonial-item-info img{
+	border-radius: 50%;
+	position: absolute;
+	left: -1px;
+}
+.testimonial-item-title{
+	text-transform: capitalize;
+	color: #FFF;
+	font-size: 20px;
+}
+.testimonial-item-position{
+	text-transform: uppercase;
+	color: #6195FF;
+	font-size: 12px;
+}
+.testimonial-item-desc{
+	color: #FFF;
+	margin-top: 15px;	
+}
+/* 2.6.b Team*/
+.team-item{
+	width: 31.3%;
+	float: left;
+	background:#EDEDEE;
+	padding: 40px 10px 40px;
+	text-align: center;
+}
+.team-item.top-down-effect{
+	z-index: 1;
+}
+.team-item-title{
+	text-transform: capitalize;
+	color: #10161A;
+	font-size: 25px;	
+	padding:15px 0 5px 0;	
+	transition: color 0.2s;
+}
+.team-social{
+	opacity: 0.7;
+}
+.team-item-position{
+	text-transform: uppercase;
+	color: #868F9B;
+	font-size: 15px;	
+	transition: color 0.2s;
+}
+.team-item-image{
+	width: 95%;
+	margin: auto;
+	position: relative;
+}
+.team-item-image img{
+	width: 100%;
+}
+.team-item .team-link{
+	display: block; 
+	margin-left: auto; /*use the remaining space and fill it from the left side and by this the element will go far to the right*/
+}
+.team-link i{
+	line-height: 50px;/*give it 40px as the height of its parent so that it will center vertically */
+}
+/* 2.7 Blog*/
+#blog{
+	background: #FAFAFA;
+	border: 1px solid #EEE;
+}
+.blog-item{
+	width: 31.3%;
+	float: left;
+	background: #FFF;
+}
+.blog-item img{
+	width: 100%;
+}
+.blog-item-info{
+	padding: 0 20px;
+}
+.blog-item-list li{
+	display: inline-block;	
+	text-transform: capitalize;
+	font-size: 12px;
+	padding-right: 8px;
+}
+.blog-item-list i{
+	display: inline-block;
+	padding-right: 4px;
+	color: #6195FF;
+}
+.blog-item-title{
+	line-height: 1.2;
+}
+.blog-item-desc{
+	color: #868F9B;
+}
+.blog-item-link{
+	color: #6195FF;
+	display: block;
+}
+/* 2.8 Contact*/
+.contact-item{
+	width:33.33%;
+	float: left;
+	background: #FFF;
+	text-align: center;
+}
+.contact-item .icon{
+	color: #6195FF;
+	font-size: 35px;
+}
+.contact-item-title{
+	text-transform: capitalize;
+	font-size: 20px;
+}
+.contact-item-desc{
+	color: #868F9B;
+}
+.contact-form{
+	margin-top:40px;
+	text-align: center;
+}
+.contact-form .container{
+	width:65%;
+	margin: auto;
+}
+.contact-form-input{
+	border: 0;
+	background: #F4F4F4;
+	padding:5px 10px 3px;
+	height: 40px;
+	border-bottom: 2px solid #EEE;
+    color: #354052;
+	opacity: 0.8;
+	width: 100%;
+	font-size: 20px;
+	 /* transition: 0.2s border-color, 0.2s opacity; */
+}
+.contact-form-input:nth-child(1){
+	margin-right: 15px;
+}
+.contact-form-input:nth-child(1), .contact-form-input:nth-child(2) {/*good idea*/
+    width: calc(50% - 10px);
+}
+/* 2.9 Footer */
+.footer-content{
+	background:#1C1D21;
+	text-align: center;
+	padding:60px;
+}
+.footer-content .container{
+	width:40%;
+	margin: auto;
+}
+.footer-media-list{
+	border-radius: 9px;
+}
+.footer-media-list a{
+	margin: 40px 3px;	
+	border-radius: 3px;
+}
+.footer-media-list .icon{
+	line-height: 50px;
+}
+.footer-decs{
+	color:#7F8893;
+	text-transform: uppercase;
+	font-size:14px;
+}
+.footer-decs a, .footer-name{
+	color: #6195FF;
+}

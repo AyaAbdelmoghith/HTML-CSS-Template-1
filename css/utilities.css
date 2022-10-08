@@ -1,0 +1,164 @@
+/*
+1- Common Styles:
+- overlay
+- container 
+- opacity hover (when I hover the opacity became less)
+- section header
+- section padding
+- hover effect 1 (left to right)
+- hover effect 2 (top to bottom)
+-placeholder 
+*/
+.container{
+	width: 80%;
+	margin: auto;
+}
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Varela Round', sans-serif;
+	font-size: 16px;
+    line-height: 1.6;
+}
+.mg{
+	margin: 0 3%;
+}
+.btn{
+	font-family: inherit
+}
+.btn{
+	margin: 15px 3px 0px;
+	width: 170px;
+	min-height: 50px;
+	border-radius: 3px;
+	border: 0;
+	text-transform: capitalize;
+	font-size: 17px;
+	cursor: pointer;
+}
+.blue-btn{
+	color: #FFF;
+	background: #6195FF;
+}
+.prices-item .btn a, .prices-item:hover .prices-plan, .team-item:hover .team-item-position{
+	color: #6195FF;
+}
+.prices-item:hover .prices-plan-title, .services-item:hover .services-item-title, .team-item:hover .team-item-title, .about-item:hover .about-item-title{
+	color: #FFF;
+}
+.overlay{ 
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top:0;
+	left:0;
+	bottom: 0;
+	right: 0;
+	background: rgba(28, 29, 33, 0.8);
+}
+.clear{
+	clear: both;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+    color: #10161A; 
+}
+.section-title{
+	font-size: 35px;
+	text-transform: capitalize;
+	text-align: center;
+}
+.hover-opacity{
+	transition: opacity .5s;
+}
+.hover-opacity:hover{
+	opacity: 0.7;
+}
+.btn.hover-opacity:hover{
+	opacity: 0.8;
+}
+a{
+	text-decoration: none;
+}
+.link{
+	display: inline-block; 
+	width: 50px;
+	height: 50px;
+	background: #6195FF;
+	color: #FFF;
+}
+ul{
+	list-style: none;
+}
+.pd-y{
+	padding: 120px 0;	
+}
+.mg-b-20{
+	margin-bottom: 20px;
+}
+.mg-b-15{
+	margin-bottom: 15px;
+}
+.line{
+	display: block;
+	background:#6195FF;
+	width: 40px;
+	height: 4px;
+	margin: 20px auto 60px;
+}
+.ltr-effect,.top-down-effect{
+	position: relative;
+}
+.ltr-effect::after, .top-down-effect::after{
+	content: "";
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background: #10161A;
+	z-index: -1;	
+}
+.ltr-effect::after{
+	width: 0;
+	transition: width 1.0s;
+}
+.top-down-effect::after{
+	height: 0;
+	transition: height 0.5s;
+}
+.ltr-effect:hover::after{
+	width:100%;
+}
+.top-down-effect:hover::after{
+	height:100%;
+}
+.opacity-visibility{
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s, visibilty 0.2s;
+}
+.opacity-visibility-parent:hover .opacity-visibility{
+	opacity: 1;
+	visibility:visible;
+}
+/* .dropdown:hover .dropdown-menu, */
+ .portfolio-item:hover .layer, .team-item:hover .team-item-image .overlay
+{
+	opacity: 1;
+	visibility:visible;
+} 
+/*common in contact  */
+::placeholder{
+    font-family: inherit;
+	color: #BEBEBE;
+	font-size: 18px;
+}
+textarea{
+	min-height: 80px;
+}
